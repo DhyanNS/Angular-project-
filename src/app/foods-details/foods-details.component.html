@@ -1,0 +1,44 @@
+<h1 class="mb-13">foods Available</h1>
+<table class="table" border="2">
+    <thead>
+        <tr>
+            <td>FoodId</td>
+            <td>Foodname</td>
+            <td>Foodprice</td>
+            <td>FoodType</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of foods">
+            <td>{{f.foodId}}</td>
+            <td>{{f.foodname}}</td>
+            <td>{{f.foodprice}}</td>
+            <td>{{f.foodType}}</td>
+    </tbody>
+</table>
+<div>
+    <input type="text" class="dfield" placeholder="Enter ID" [(ngModel)]="deletedId">
+    <button type="submit" class="delete" (click)="deleteFood()">Delete</button>  
+    
+</div>
+
+<div>
+    <div class="add-fields">
+        <input type="text" class="dfield" placeholder="Food Name" [(ngModel)]="newFood.Foodname">
+        <input type="text" class="dfield" placeholder="Food price" [(ngModel)]="newFood.Foodprice">
+        <input type="text" class="dfield" placeholder="Food Type" [(ngModel)]="newFood.FoodType">
+        <button type="submit" class="add" (click)="addNewFood()">Add</button>
+           
+    </div>
+</div>
+<div>
+    <div class="update-fields">
+        <input type="text" class="dfield" placeholder="Food ID" [(ngModel)]="id">
+        <input type="text" class="dfield" placeholder="Food Name" [(ngModel)]="uFood.Foodname">
+        <input type="text" class="dfield" placeholder="Food price" [(ngModel)]="uFood.Foodprice">
+        <input type="text" class="dfield" placeholder="Food Type" [(ngModel)]="uFood.FoodType">
+        <button type="submit" class="update" (click)="updateNFood()">Update</button>  
+    </div>
+   
+    
+</div>
